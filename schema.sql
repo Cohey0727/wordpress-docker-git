@@ -1,27 +1,3 @@
--- MySQL dump 10.13  Distrib 8.1.0, for Linux (aarch64)
---
--- Host: localhost    Database: main
--- ------------------------------------------------------
--- Server version	8.1.0
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `wp_commentmeta`
---
-
-DROP TABLE IF EXISTS `wp_commentmeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_commentmeta` (
   `meta_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -31,15 +7,7 @@ CREATE TABLE `wp_commentmeta` (
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_comments`
---
-
-DROP TABLE IF EXISTS `wp_comments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_comments` (
   `comment_ID` bigint unsigned NOT NULL AUTO_INCREMENT,
   `comment_post_ID` bigint unsigned NOT NULL DEFAULT '0',
@@ -63,15 +31,7 @@ CREATE TABLE `wp_comments` (
   KEY `comment_parent` (`comment_parent`),
   KEY `comment_author_email` (`comment_author_email`(10))
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_links`
---
-
-DROP TABLE IF EXISTS `wp_links`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_links` (
   `link_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -89,15 +49,7 @@ CREATE TABLE `wp_links` (
   PRIMARY KEY (`link_id`),
   KEY `link_visible` (`link_visible`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_options`
---
-
-DROP TABLE IF EXISTS `wp_options`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_options` (
   `option_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -106,16 +58,8 @@ CREATE TABLE `wp_options` (
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`),
   KEY `autoload` (`autoload`)
-) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
---
--- Table structure for table `wp_postmeta`
---
-
-DROP TABLE IF EXISTS `wp_postmeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_postmeta` (
   `meta_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `post_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -125,15 +69,7 @@ CREATE TABLE `wp_postmeta` (
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_posts`
---
-
-DROP TABLE IF EXISTS `wp_posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_posts` (
   `ID` bigint unsigned NOT NULL AUTO_INCREMENT,
   `post_author` bigint unsigned NOT NULL DEFAULT '0',
@@ -163,16 +99,8 @@ CREATE TABLE `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
---
--- Table structure for table `wp_term_relationships`
---
-
-DROP TABLE IF EXISTS `wp_term_relationships`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_term_relationships` (
   `object_id` bigint unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -180,15 +108,7 @@ CREATE TABLE `wp_term_relationships` (
   PRIMARY KEY (`object_id`,`term_taxonomy_id`),
   KEY `term_taxonomy_id` (`term_taxonomy_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_term_taxonomy`
---
-
-DROP TABLE IF EXISTS `wp_term_taxonomy`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_term_taxonomy` (
   `term_taxonomy_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -200,15 +120,7 @@ CREATE TABLE `wp_term_taxonomy` (
   UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
   KEY `taxonomy` (`taxonomy`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_termmeta`
---
-
-DROP TABLE IF EXISTS `wp_termmeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_termmeta` (
   `meta_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `term_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -218,15 +130,7 @@ CREATE TABLE `wp_termmeta` (
   KEY `term_id` (`term_id`),
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_terms`
---
-
-DROP TABLE IF EXISTS `wp_terms`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_terms` (
   `term_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -236,15 +140,7 @@ CREATE TABLE `wp_terms` (
   KEY `slug` (`slug`(191)),
   KEY `name` (`name`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_usermeta`
---
-
-DROP TABLE IF EXISTS `wp_usermeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_usermeta` (
   `umeta_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL DEFAULT '0',
@@ -254,15 +150,7 @@ CREATE TABLE `wp_usermeta` (
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`(191))
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `wp_users`
---
-
-DROP TABLE IF EXISTS `wp_users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_users` (
   `ID` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
@@ -279,15 +167,3 @@ CREATE TABLE `wp_users` (
   KEY `user_nicename` (`user_nicename`),
   KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-09-02  3:43:57
