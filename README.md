@@ -7,5 +7,4 @@ tar xf mysqldef_linux_amd64.tar.gz -C /usr/local/bin/
 
 ```sh
 docker compose exec database /usr/bin/mysqldump --user=wp_user --password=wp_password --no-tablespaces --no-data main > schema.sql
-docker compose cp database:schema.sql ./schema.sql
 ```
