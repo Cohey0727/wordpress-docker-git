@@ -1,3 +1,7 @@
+# Wordpress with docker and git
+
+Wordpress を Docker と Git を用いて開発しやすくすることを試す
+
 ## Install sqlfdef
 
 ### Mac
